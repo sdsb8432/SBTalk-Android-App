@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "331372424272",
+    "firebase_url": "https://sbtalk-4a2e1.firebaseio.com",
+    "project_id": "sbtalk-4a2e1",
+    "storage_bucket": "sbtalk-4a2e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:331372424272:android:93cb53fe3bed244b",
+        "android_client_info": {
+          "package_name": "com.sdsb.sbtalk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "331372424272-j9uqt4snk1n9kfq8blid27b9uk3bml99.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sdsb.sbtalk",
+            "certificate_hash": "D216DACD5BE36038C9E2AB05091C1B718F7D38DD"
+          }
+        },
+        {
+          "client_id": "331372424272-cvmi7e8h7k3qup7kpqko9kqf9uiuqipu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHgSoFrBnRsnYhcpMt2iGwZnYnkcyS6aU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "331372424272-cvmi7e8h7k3qup7kpqko9kqf9uiuqipu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
