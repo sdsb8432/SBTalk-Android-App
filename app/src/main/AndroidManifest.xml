@@ -19,8 +19,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".SignUpActivity" android:windowSoftInputMode="adjustResize"></activity>
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".SignUpActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".CreateRoomActivity" />
+        <activity android:name=".CustomView.RoomActivity"></activity>
     </application>
 
 </manifest>

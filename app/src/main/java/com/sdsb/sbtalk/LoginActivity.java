@@ -65,32 +65,13 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this, task.getException().getMessage(),
                                         Toast.LENGTH_SHORT).show();
                             }
-                            else {
-                                Toast.makeText(getApplicationContext(), "Login Success", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                                LoginActivity.this.finish();
-                            }
                         }
                     });
         }
     }
 
     @OnClick(R.id.textView_sign_up) void onClickSignUp() {
-        startActivityForResult(new Intent(this, SignUpActivity.class), Const.SIGNUP);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == Const.SIGNUP) {
-            if(resultCode == Const.SIGNUP_RESULT) {
-                //firebaseAuth.signOut();
-                /*editTextEmail.setText(data.getStringExtra("email"));
-                editTextPassword.setText(data.getStringExtra("password"));
-
-                editTextEmail.setSelection(editTextEmail.getText().toString().length());*/
-            }
-        }
+        startActivity(new Intent(this, SignUpActivity.class));
     }
 
     @Override
