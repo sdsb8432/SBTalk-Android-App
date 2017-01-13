@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void onClickRoom(Room room) {
-        startActivity(new Intent(this, RoomActivity.class).putExtra("room", room).putExtra("name", textViewUserName.getText().toString()));
+        startActivity(new Intent(this, RoomActivity.class).putExtra("room", room).putExtra("name", textViewUserName.getText().toString()).putExtra("userUID", userUID));
     }
 
     @OnClick(R.id.textView_logout) void onClickLogout() {

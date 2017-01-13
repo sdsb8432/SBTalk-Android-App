@@ -4,9 +4,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.firebase.database.ChildEventListener;
@@ -29,6 +31,7 @@ public class RoomActivity extends AppCompatActivity {
 
     private Room room;
     private String name;
+    private String userUID;
     List<Chat> chatList;
 
     private DatabaseReference databaseReference;
@@ -41,6 +44,8 @@ public class RoomActivity extends AppCompatActivity {
     @BindView(R.id.editText_message)
     EditText editTextMessage;
 
+    private boolean itemStatus = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +55,7 @@ public class RoomActivity extends AppCompatActivity {
 
         room = (Room) getIntent().getSerializableExtra("room");
         name = getIntent().getStringExtra("name");
+        userUID = getIntent().getStringExtra("userUID");
         chatList = new ArrayList<>();
 
         adapter = new ChatAdapter();
@@ -90,7 +96,7 @@ public class RoomActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.textView_send) void onClickSend() {
-        databaseReference.child("room").child(room.getUniqueID()).push().setValue(new Chat(editTextMessage.getText().toString(), name));
+        databaseReference.child("room").child(room.getUniqueID()).push().setValue(new Chat(userUID, editTextMessage.getText().toString(), name));
         editTextMessage.setText("");
     }
 
@@ -107,6 +113,11 @@ public class RoomActivity extends AppCompatActivity {
 
             holder.textViewName.setText(chat.getName());
             holder.textViewMessage.setText(chat.getMessage());
+
+            if(userUID.equals(chat.getUserUID()))
+                holder.itemChat.setGravity(Gravity.RIGHT);
+            else
+                holder.itemChat.setGravity(Gravity.LEFT);
         }
 
         @Override
@@ -117,6 +128,8 @@ public class RoomActivity extends AppCompatActivity {
 
     public class ItemHolder extends RecyclerView.ViewHolder {
 
+        @BindView(R.id.item_chat)
+        LinearLayout itemChat;
         @BindView(R.id.textView_name)
         TextView textViewName;
         @BindView(R.id.textVIew_message)

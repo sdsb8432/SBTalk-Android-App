@@ -8,15 +8,21 @@ import com.google.firebase.database.IgnoreExtraProperties;
 
 @IgnoreExtraProperties
 public class Chat {
+    private String userUID;
     private String name;
     private String message;
 
     public Chat() {
     }
 
-    public Chat(String message, String name) {
+    public Chat(String userUID, String message, String name) {
+        this.userUID = userUID;
         this.message = message;
         this.name = name;
+    }
+
+    public String getUserUID() {
+        return userUID;
     }
 
     public String getMessage() {
